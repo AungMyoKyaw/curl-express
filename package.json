@@ -1,0 +1,45 @@
+{
+  "name": "curl-express",
+  "version": "1.0.0",
+  "description": "convert request to curl cmd",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "format": "prettier --write \"**/*.ts\"",
+    "lint": "eslint \"**/*.ts\"",
+    "lint:fix": "eslint \"**/*.ts\" --fix",
+    "test": "jest",
+    "build": "tsc"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AungMyoKyaw/curl-express.git"
+  },
+  "keywords": [
+    "express-curl",
+    "curl",
+    "curl-express",
+    "express middleware"
+  ],
+  "author": "Aung Myo Kyaw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AungMyoKyaw/curl-express/issues"
+  },
+  "homepage": "https://github.com/AungMyoKyaw/curl-express#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.17",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
+  }
+}
