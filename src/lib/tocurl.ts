@@ -38,8 +38,18 @@ function toCurl(req: Ireq): string {
   });
 
   // add request body
-  const reqBodyTemplate = "-d '[BODY]'";
-  curlStr += reqBodyTemplate.replace('[BODY]', JSON.stringify(body));
+  const isEmptyBody = Object.keys(body).length < 1;
+  switch (isEmptyBody) {
+    case true:
+      curlStr = curlStr.slice(0, -1);
+      break;
+    case false: {
+      const reqBodyTemplate = "-d '[BODY]'";
+      curlStr += reqBodyTemplate.replace('[BODY]', JSON.stringify(body));
+      break;
+    }
+    default:
+  }
 
   return `${curlStr}`;
 }
