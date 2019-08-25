@@ -1,4 +1,4 @@
-FROM node
+FROM node:lts
 
 LABEL maintainer="git@aungmyokyaw.com"
 
