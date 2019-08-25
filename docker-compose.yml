@@ -1,0 +1,8 @@
+version: "3.7"
+
+services:
+  curl-express:
+    build: .
+    container_name: curl-express
+    volumes:
+      - ./:/home/curl-express

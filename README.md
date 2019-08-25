@@ -35,11 +35,37 @@ app.use(curlExpress);
 app.all('*', (req, res) => {
   const { curlcmd } = req;
   console.log(curlcmd);
-  // => curl -X GET 'http://localhost:3000/' -H 'host: localhost:3000' -H 'connection: keep-alive' -H 'upgrade-insecure-requests: 1' -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' -H 'sec-fetch-mode: navigate' -H 'sec-fetch-user: ?1' -H 'dnt: 1' -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3' -H 'sec-fetch-site: none' -H 'accept-encoding: gzip, deflate, br' -H 'accept-language: my,en-US;q=0.9,en;q=0.8' -H 'cookie: test=test' -H 'if-none-match: W/"c-Lve95gjOVATpfV8EL5X4nxwjKHE"' -d '{}'
+  // => curl -X GET 'http://localhost:3000/' -H 'host: localhost:3000' -H 'connection: keep-alive' -H 'upgrade-insecure-requests: 1' -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' -H 'sec-fetch-mode: navigate' -H 'sec-fetch-user: ?1' -H 'dnt: 1' -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3' -H 'sec-fetch-site: none' -H 'accept-encoding: gzip, deflate, br' -H 'accept-language: my,en-US;q=0.9,en;q=0.8' -H 'cookie: test=test' -H 'if-none-match: W/"c-Lve95gjOVATpfV8EL5X4nxwjKHE"'
   res.send(curlcmd);
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+```
+
+## Development
+
+### Docker Build
+
+```shell
+docker-compose build
+```
+
+### Docker Run
+
+```shell
+docker-compose run curl-express
+```
+
+### Install Dependencies
+
+```shell
+npm i
+```
+
+### Run Test
+
+```shell
+npm t
 ```
 
 ## License
