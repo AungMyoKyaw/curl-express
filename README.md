@@ -30,7 +30,11 @@ app.use(express.urlencoded({ extended: true }));
 
 // curl-express middleware
 // it is placed after body paser,multipart handling middlewares
-app.use(curlExpress);
+app.use(curlExpress());
+
+// user can define omitted header or body payload
+// Example:
+// => app.use(curlExpress({omittedKeys: ['authorization']}));
 
 app.all('*', (req, res) => {
   const { curlcmd } = req;

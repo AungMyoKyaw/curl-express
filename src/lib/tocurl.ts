@@ -8,7 +8,11 @@ interface Ireq {
   [index: string]: any;
 }
 
-function toCurl(req: Ireq): string {
+export interface Ioption {
+  omittedKeys: string[];
+}
+
+function toCurl(req: Ireq, options: Ioption = { omittedKeys: [] }): string {
   let curlStr = '';
   const {
     headers = {},
@@ -18,6 +22,7 @@ function toCurl(req: Ireq): string {
     originalUrl,
     body = {}
   } = req;
+  const { omittedKeys } = options;
   const { host: hostname = defaultHostName } = headers;
   const requestUrl = `${protocol}://${hostname}${originalUrl}`;
 
@@ -30,12 +35,14 @@ function toCurl(req: Ireq): string {
   curlStr += urlTemplate.replace('[URL]', requestUrl);
 
   // add headers
-  Object.keys(headers).forEach(key => {
-    const headersTemplate = "-H '[KEY]: [VALUE]' ";
-    curlStr += headersTemplate
-      .replace('[KEY]', key)
-      .replace('[VALUE]', headers[key]);
-  });
+  Object.keys(headers)
+    .filter(key => !omittedKeys.includes(key))
+    .forEach(key => {
+      const headersTemplate = "-H '[KEY]: [VALUE]' ";
+      curlStr += headersTemplate
+        .replace('[KEY]', key)
+        .replace('[VALUE]', headers[key]);
+    });
 
   // add request body
   const isEmptyBody = Object.keys(body).length < 1;
@@ -45,6 +52,7 @@ function toCurl(req: Ireq): string {
       break;
     case false: {
       const reqBodyTemplate = "-d '[BODY]'";
+      omittedKeys.forEach(key => delete body[key]);
       curlStr += reqBodyTemplate.replace('[BODY]', JSON.stringify(body));
       break;
     }
