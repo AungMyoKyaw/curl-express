@@ -2,7 +2,7 @@
 
 > convert request to curl cmd
 
-[![Build Status][travis]][travis-url]
+[![Build Status][azure]][azure-url]
 [![code style: prettier][prettier]][prettier-url]
 [![npm][npm-download]][npm-dl-url]
 [![contributions welcome][contri]][contri-url]
@@ -77,13 +77,13 @@ npm t
 MIT © [Aung Myo Kyaw](https://github.com/AungMyoKyaw)
 
 [curl-express]: https://github.com/AungMyoKyaw/curl-express
-[contri]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square
+[contri]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg
 [contri-url]: https://github.com/AungMyoKyaw/curl-express/issues
-[travis]: https://img.shields.io/travis/AungMyoKyaw/curl-express/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/AungMyoKyaw/curl-express
-[npm-download]: https://img.shields.io/npm/dt/curl-express.svg?style=flat-square
+[azure]: https://dev.azure.com/AungMyoKyaw/curl-express/_apis/build/status/curl-express?branchName=master
+[azure-url]: https://dev.azure.com/AungMyoKyaw/curl-express/_build/latest?definitionId=3&branchName=master
+[npm-download]: https://img.shields.io/npm/dt/curl-express.svg
 [npm-dl-url]: https://www.npmjs.com/package/curl-express
-[license]: https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square
+[license]: https://img.shields.io/badge/License-MIT-brightgreen.svg
 [license-url]: https://opensource.org/licenses/MIT
-[prettier]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square
+[prettier]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg
 [prettier-url]: https://github.com/prettier/prettier
