@@ -1,7 +1,7 @@
 {
   "name": "curl-express",
   "version": "1.0.1",
-  "description": "convert request to curl cmd",
+  "description": "Convert Express.js requests to cURL commands for debugging and logging",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -9,7 +9,8 @@
     "lint": "eslint \"**/*.ts\"",
     "lint:fix": "eslint \"**/*.ts\" --fix",
     "test": "jest",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "dist"
@@ -22,7 +23,10 @@
     "express-curl",
     "curl",
     "curl-express",
-    "express middleware"
+    "express middleware",
+    "debugging",
+    "logging",
+    "request"
   ],
   "author": "Aung Myo Kyaw",
   "license": "MIT",
@@ -30,7 +34,11 @@
     "url": "https://github.com/AungMyoKyaw/curl-express/issues"
   },
   "homepage": "https://github.com/AungMyoKyaw/curl-express#readme",
+  "peerDependencies": {
+    "express": ">=4.0.0"
+  },
   "devDependencies": {
+    "@types/express": "^4.17.21",
     "@types/jest": "^24.0.17",
     "@types/node": "^12.7.2",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
@@ -38,6 +46,7 @@
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
+    "express": "^4.18.2",
     "jest": "^24.9.0",
     "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",
