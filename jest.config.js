@@ -1,5 +1,5 @@
 // For a detailed explanation regarding each configuration property, visit:
-// https://jestjs.io/docs/en/configuration.html
+// https://jestjs.io/docs/configuration
 
 module.exports = {
   clearMocks: true,
@@ -7,6 +7,11 @@ module.exports = {
   testEnvironment: 'node',
   testMatch: ['**/tests/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
   transform: {
-    '^.+\\.tsx?$': 'ts-jest'
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        useESM: false
+      }
+    ]
   }
 };
