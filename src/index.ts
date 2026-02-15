@@ -38,15 +38,20 @@ declare module 'express' {
  * });
  * ```
  */
-function curlExpressMiddleware(options: CurlOptions = {}): (req: Request, res: Response, next: NextFunction) => void {
+function curlExpressMiddleware(
+  options: CurlOptions = {}
+): (req: Request, res: Response, next: NextFunction) => void {
   return function middleware(req: Request, _res: Response, next: NextFunction): void {
     try {
       req.curlcmd = toCurl(req, options);
     } catch (error) {
       // Sanitize error message to avoid leaking sensitive information
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      req.curlcmd = `Error converting request to curl format: ${errorMessage}. ` +
-        `Please report at https://github.com/AungMyoKyaw/curl-express/issues`;
+      const errorMessage = error instanceof Error
+        ? error.message
+        : 'Unknown error';
+      req.curlcmd = 'Error converting request to curl format: '
+        + `${errorMessage}. Please report at `
+        + 'https://github.com/AungMyoKyaw/curl-express/issues';
     }
     next();
   };

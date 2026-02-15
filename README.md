@@ -5,6 +5,8 @@
 [![Build Status][azure]][azure-url]
 [![code style: prettier][prettier]][prettier-url]
 [![npm][npm-download]][npm-dl-url]
+[![npm version][npm-version]][npm-version-url]
+[![TypeScript][typescript]][typescript-url]
 [![contributions welcome][contri]][contri-url]
 [![License: MIT][license]][license-url]
 
@@ -165,3 +167,11 @@ Aung Myo Kyaw - [GitHub](https://github.com/AungMyoKyaw)
 [license-url]: https://opensource.org/licenses/MIT
 [prettier]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg
 [prettier-url]: https://github.com/prettier/prettier
+[npm-version]: https://img.shields.io/npm/v/curl-express.svg
+[npm-version-url]: https://www.npmjs.com/package/curl-express
+[typescript]: https://img.shields.io/badge/TypeScript-5.0%2B-blue.svg
+[typescript-url]: https://www.typescriptlang.org/
+
+## Changelog
+
+See [ Releases ](https://github.com/AungMyoKyaw/curl-express/releases) for changelog.
